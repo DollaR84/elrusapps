@@ -44,8 +44,8 @@ class Sinoptik:
         tabsContent = self.__bs.find('div', {'class': 'tabsContent'})
         self.__water = self.__get_water(tabsContent.find('p', {'class': 'today-water'}))
         self.__infoDaylight = self.__get_infoDaylight(tabsContent.find('div', {'class': 'infoDaylight'}))
-        self.__warnings = self.__get_warnings(tabsContent.find('div', {'class': 'oWarnings clearfix'}).find('div', {'class': 'description'}))
-        self.__description = self.__get_description(tabsContent.find('div', {'class': 'wDescription clearfix'}).find('div', {'class': 'description'}))
+        self.__warnings = self.__get_warnings(tabsContent.find('div', {'class': 'oWarnings clearfix'}))
+        self.__description = self.__get_description(tabsContent.find('div', {'class': 'wDescription clearfix'}))
 
     def __get_day(self, bsObj, today=False):
         """Return day dict from bs object."""
@@ -93,11 +93,17 @@ class Sinoptik:
 
     def __get_warnings(self, bsObj):
         """Return warnings string from bs object."""
-        return bsObj.text
+        warnings = ''
+        if bsObj is not None:
+            warnings = bsObj.find('div', {'class': 'description'}).text
+        return warnings
 
     def __get_description(self, bsObj):
         """Return description string from bs object."""
-        return bsObj.text
+        description = ''
+        if bsObj is not None:
+            description = bsObj.find('div', {'class': 'description'}).text
+        return description
 
     @property
     def today(self):
