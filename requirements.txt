@@ -5,5 +5,5 @@ bs4==0.0.1
 psycopg2==2.7.5
 psycopg2-binary==2.7.5
 gunicorn==19.9.0
-requests==2.17.3
+requests==2.20.0
 whitenoise==3.3.1
