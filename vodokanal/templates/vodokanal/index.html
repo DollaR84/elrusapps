@@ -1,0 +1,59 @@
+{% extends "__base.html" %}
+{% load static from staticfiles %}
+{% block title %}{{ block.super }} | Водоканал{% endblock %}
+{% block description %}<meta name="description" content="Уведомления на почту об отключениях воды в городе Одесса">{% endblock %}
+{% block keywords %}<meta name="keywords" content="Одесса, инфокс, водоканал, отключение воды, уведомление">{% endblock %}
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'vodokanal/css/style.css' %}">
+{% endblock %}
+{% block header %}
+<div class="row">
+    <div class="col-12 text-right">
+        <div class="page-header">
+            <h1>Уведомлялка</h1>
+        </div>
+        <p>о новостях водоканала города Одесса</p>
+    </div> <!-- .col -->
+</div> <!-- .row -->
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3 mt-3">
+        <h2>Работа сервиса приостановлена!</h2>
+        <h3>Подписка на уведомления:</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>{{ form }}</p>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <button type="submit" class="btn btn-default btn-success pull-right">Подписаться</button>
+        </form>
+    </div> <!-- .col -->
+</div> <!-- .row -->
+<div class="row">
+    <div class="col-12 mt-3 w-80">
+        <h3 class="card-title">Последняя новость:</h3>
+        {% if last_news %}
+        <p class="card-text"><div class="text-center"><h5 class="news-title">{{ last_news.title }}</h5></div>
+        <div class="text-left"><p>{{ last_news.date }}</p></div>
+        <p class="lead news-body">{{ last_news.text }}</p>
+        <div class="text-right"><p><a href="{{ last_news.link_href }}">{{ last_news.link_text }}</a></p></div></p>
+        {% else %}
+        <p class="card-text"><h5>Новостей в базе нет</h5></p>
+        {% endif %}
+    </div> <!-- .col -->
+</div> <!-- .row -->
+<div class="row">
+    <div class="col-12 text-right mt-3">
+        <form action="/">
+            <button type="submit" class="btn btn-lg btn-secondary text-light">Назад</button>
+        </form>
+    </div> <!-- .col -->
+</div> <!-- .row -->
+{% endblock %}

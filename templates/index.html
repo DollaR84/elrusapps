@@ -1,0 +1,17 @@
+{% extends "__base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-lg-3">
+        <h4>Уведомлялка отключений воды в Одессе</h4>
+        <div class="text-center"><form action="/vodokanal">
+            <button type="submit" class="btn btn-lg btn-primary text-light">Водоканал</button>
+        </form></div>
+    </div> <!-- .col -->
+    <div class="col-sm-6 col-lg-3">
+        <h4>Прогноз погоды для Одессы</h4>
+        <div class="text-center"><form action="/weather">
+            <button type="submit" class="btn btn-lg btn-primary text-light">Погода</button>
+        </form></div>
+    </div> <!-- .col -->
+</div> <!-- .row -->
+{% endblock %}

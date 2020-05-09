@@ -1,0 +1,88 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML>
+
+<html lang="ru">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{% block title %}Набор web приложений{% endblock %}</title>
+
+        {% block description %}<meta name="description" content="Набор web приложений от Руслана Долованюк">{% endblock %}
+        <meta name="author" content="Ruslan Dolovanyuk">
+        <meta name="copyright" content="Сайт https://elrusapps.herokuapp.com">
+        <meta name="publisher" content="Ruslan Dolovanyuk">
+        <meta name="Publisher-Email" content="elrus-admin@s2.ho.ua">
+        <meta name="Publisher-URL" content="http://elrus.ho.ua/">
+        <meta name="robots" content="index, follow">
+        {% block keywords %}<meta name="keywords" content="web приложения, Руслан Долованюк">{% endblock %}
+
+        <!-- Include CSS -->
+        <!-- bootstrap4 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- my CSS -->
+        {% block style %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% endblock %}
+
+    </head>
+
+    <body>
+    <div class="container">
+
+        <header>{% block header %}
+            <div class="row">
+                <div class="col-12 text-right">
+                    <div class="page-header">
+                        <h1>Набор web приложений</h1>
+                    </div>
+                    <p>Автор: Руслан Долованюк</p>
+                </div> <!-- .col -->
+            </div> <!-- .row -->
+        {% endblock %}</header>
+
+        <main role="main">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card bg-body">
+                        <div class="card-body">
+                            <section>
+                                {% block content %}{% endblock %}
+                            </section>
+                        </div>
+                    </div> <!-- .card -->
+                </div> <!-- .col -->
+            </div> <!-- .row -->
+        </main>
+
+        <footer>{% block footer %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <small>
+                            <time datetime="2018-06-26">26.06.2018</time> © <a href="http://elrus.ho.ua">Руслан Долованюк</a>
+                        </small>
+                        <p>Сайт автора: <a href="http://elrus.ho.ua">elrus</a></p>
+                        <address>
+                            <a href="mailto:elrus-admin@s2.ho.ua">Написать письмо</a>
+                        </address>
+                    </div>
+                </div> <!-- .col -->
+            </div> <!-- .row -->
+        {% endblock %}</footer>
+
+        </div> <!-- .container -->
+
+        <!-- Include bootstrap4 JavaScript scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- Include my JavaScript scripts -->
+
+    </body>
+
+</html>

@@ -1,0 +1,32 @@
+/*
+* Style for infoxvod
+*
+* created on 26.06.2018
+*
+* author: Ruslan Dolovanyuk
+*
+*/
+
+header, footer {
+  background: #87CEEB;
+  color: #F8F9FA;
+}
+
+.bg-body {
+  background: #7FFFD4;
+  color: #343A40;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.bg-img {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.header-gray {
+  background: #9CA5AD;
+}

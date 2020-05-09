@@ -1,0 +1,17 @@
+/*
+* Style for infoxvod
+*
+* created on 26.06.2018
+*
+* author: Ruslan Dolovanyuk
+*
+*/
+
+.news-title {
+  background: #007bff;
+  color: #F8F9FA;
+}
+
+.news-body {
+  background: #50E2DA;
+}

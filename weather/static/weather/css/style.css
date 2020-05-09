@@ -1,0 +1,16 @@
+/*
+* Style for weather
+*
+* created on 20.07.2018
+*
+* author: Ruslan Dolovanyuk
+*
+*/
+
+.weather-body {
+  background: #50E2DA;
+}
+
+.weather-small-body {
+  background: #fd7e14;
+}
