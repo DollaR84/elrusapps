@@ -50,7 +50,9 @@
 <div class="col-sm-6">
 <div class="card"><div class="card-body weather-small-body"><div class="card-block">
 <p class="card-text">{{ weather.today.weatherIco_title }}</p>
-<p class="card-text">{{ weather.today.min.temp }} - {{ weather.today.max.temp }}</p>
+<p class="card-text">температура:</p>
+<p class="card-text">днем: {{ weather.today.max.temp }}</p>
+<p class="card-text">ночью: {{ weather.today.min.temp }}</p>
 </div></div></div>
 </div> <!-- .col -->
 <div class="col-sm-6">
@@ -78,7 +80,9 @@
 <img class="card-img-top" src="{{ day.weatherImg.src }}" alt="{{ day.weatherImg.alt }}" height="64" width="64">
 <div class="card-body weather-small-body">
 <p class="card-text">{{ day.weatherIco_title }}</p>
-<p class="card-text">{{ day.min.temp }} - {{ day.max.temp }}</p>
+<p class="card-text">температура:</p>
+<p class="card-text">днем: {{ day.max.temp }}</p>
+<p class="card-text">ночью: {{ day.min.temp }}</p>
 </div><!-- .card-body -->
 </div><!-- .card -->
 </div><!-- .col -->
